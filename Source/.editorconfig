@@ -132,7 +132,7 @@ dotnet_naming_rule.members_should_be_pascal_case.style = pascal_case_style
 dotnet_diagnostic.IDE0001.severity = suggestion
 
 # IDE0002: Simplify member access (C#, VB)
-dotnet_diagnostic.IDE0002.severity = suggestion
+dotnet_diagnostic.IDE0002.severity = silent
 
 # IDE0003: Remove this or Me qualification (C#, VB)
 # IDE0009: Add this or Me qualification (C#, VB)

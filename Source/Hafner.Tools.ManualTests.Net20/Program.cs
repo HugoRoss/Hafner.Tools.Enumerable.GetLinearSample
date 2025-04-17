@@ -1,13 +1,12 @@
 ﻿namespace Hafner.Tools.ManualTests;
 
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using Hafner.Tools;
 
-internal class Program {
+internal sealed class Program {
 
     public static void Main(string[] args) {
+        _ = args; //unused
         try {
             Tests.GetLinearSample_Enumerable_MoreElements();
             Tests.GetLinearSample_Collection_MoreElements();

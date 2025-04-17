@@ -2,7 +2,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
+[SuppressMessage("Usage", "CA2201:Do not raise reserved exception types", Justification = $"It's good enough, minimal effort to write the '{nameof(Tests)}' class.")]
 internal static class Tests {
 
     public static void GetLinearSample_Enumerable_MoreElements() {

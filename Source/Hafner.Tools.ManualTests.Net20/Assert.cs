@@ -1,8 +1,9 @@
 ﻿namespace Hafner.Tools.ManualTests;
 
 using System;
-using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
+[SuppressMessage("Usage", "CA2201:Do not raise reserved exception types", Justification = $"It's good enough, minimal effort to write the '{nameof(Assert)}' class.")]
 internal static class Assert {
 
     public static void AreEqual(int expected, int actual) {
@@ -17,7 +18,7 @@ internal static class Assert {
     }
 
     public static void AreNotSame(object a, object b, string? errorMessage = null) {
-        if (!object.ReferenceEquals(a, b)) return;
+        if (!Object.ReferenceEquals(a, b)) return;
         if (String.IsNullOrEmpty(errorMessage)) errorMessage = "The two instances cannot be the same!";
         throw new Exception(errorMessage);
     }

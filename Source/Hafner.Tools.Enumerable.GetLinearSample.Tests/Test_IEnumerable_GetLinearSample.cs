@@ -23,7 +23,7 @@ public class Test_IEnumerable_GetLinearSample {
         Assert.AreEqual(10, result.Count);
         result.Should().ContainInConsecutiveOrder([0, 11, 22, 33, 44, 55, 66, 77, 88, 99]);
         List<int> expectedElements = [0, 11, 22, 33, 44, 55, 66, 77, 88, 99];
-        expectedElements.SequenceEqual(result);
+        Assert.IsTrue(expectedElements.SequenceEqual(result));
     }
 
     [TestMethod]

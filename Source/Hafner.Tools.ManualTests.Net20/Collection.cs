@@ -1,8 +1,6 @@
 ﻿namespace Hafner.Tools.ManualTests;
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 internal static class Collection {
 

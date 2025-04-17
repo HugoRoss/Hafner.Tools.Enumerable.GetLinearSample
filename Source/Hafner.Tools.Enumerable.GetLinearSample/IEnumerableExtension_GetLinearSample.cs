@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.ComponentModel;
 
 /// <summary>
 /// Class that contains the extension method <see cref="IEnumerator{T}" />.<see cref="GetLinearSample{T}(IEnumerable{T}?, Int32)">GetLinearSample(int count)</see>`.
@@ -31,11 +30,11 @@ public static class IEnumerableExtension_GetLinearSample {
         bool isClone = false;
         List<T>? list = null;
         if (collection is not IList<T> iList) {
-            iList = list = new List<T>(collection);
+            iList = list = [.. collection];
             isClone = true;
         }
-        if (iList.Count == 0) return isClone ? list! : new List<T>(iList);
-        if (iList.Count <= count) return isClone ? list! : new List<T>(iList);
+        if (iList.Count == 0) return isClone ? list! : [.. iList];
+        if (iList.Count <= count) return isClone ? list! : [.. iList];
 
         if (count == 1) return [iList[0]];
         if (count == 2) return [iList[0], iList[iList.Count - 1]];
